@@ -1,3 +1,4 @@
+  
 import sys
 sys.path.append('core')
 
@@ -8,7 +9,7 @@ import glob
 import numpy as np
 import torch
 from PIL import Image
-
+import matplotlib.pyplot as plt
 from raft import RAFT
 from utils import flow_viz
 from utils.utils import InputPadder
@@ -29,14 +30,22 @@ def viz(img, flo):
     
     # map flow to rgb image
     flo = flow_viz.flow_to_image(flo)
-    img_flo = np.concatenate([img, flo], axis=0)
+   
+
+    #img_flo = np.concatenate([img, flo], axis=0)
 
     # import matplotlib.pyplot as plt
-    # plt.imshow(img_flo / 255.0)
-    # plt.show()
+    plt.subplot(221);plt.imshow(img / 255.0)
+    plt.subplot(222);plt.imshow(flo / 255.0)
 
-    cv2.imshow('image', img_flo[:, :, [2,1,0]]/255.0)
-    cv2.waitKey()
+    if flo.ndim == 3:
+        flo = flo[:,:,0]
+    plt.subplot(223);plt.imshow(flo / 255.0, cmap='gray')
+    plt.subplot(224); plt.imshow(flo / 255.0, cmap = plt.cm.gray_r)
+    plt.show()
+
+    #cv2.imshow('image', img_flo[:, :, [2,1,0]]/255.0)
+    #cv2.waitKey()
 
 
 def demo(args):
