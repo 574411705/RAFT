@@ -1,0 +1,10 @@
+Unloaded module: latex/TeXLive19
+DCC-SW: Added modules (2020-aug/XeonGold6126)
+DCC-SW: Removed standard modules: /apps/dcc/etc/ModulesSL73/modulefiles
+DCC-SW: Using gnu/9.3.0 compiler
+Loaded module: cuda/10.2
+DCC-SW: Released modules (2020-aug/XeonGold6126)
+DCC-SW: Added modules (2020-aug/XeonGold6126)
+DCC-SW: Removed standard modules: /apps/dcc/etc/ModulesSL73/modulefiles
+DCC-SW: Using gnu/9.3.0 compiler
+User defined signal 2
